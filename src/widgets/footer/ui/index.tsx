@@ -1,40 +1,12 @@
 import { PRODUCT_INFO } from "@/shared/constants/data";
 import { InstagramIcon, YoutubeIcon } from "lucide-react";
-
-const sections = [
-  {
-    title: "Product",
-    links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
-    ],
-  },
-];
+import { sections } from "../lib/data";
+import { ModeToggle } from "@/shared/ui/theme-toggle";
 
 const Footer = () => {
   return (
     <section className="py-32">
-      <div className="container mx-auto">
+      <div className="custom-container">
         <div className="flex w-full flex-col items-center justify-between gap-10 text-center lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col items-center justify-between gap-6 lg:items-start">
             {/* Logo */}
@@ -75,6 +47,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+            <ModeToggle />
           </div>
           <div className="grid w-full grid-cols-3 gap-6 lg:gap-20">
             {sections.map((section, sectionIdx) => (
