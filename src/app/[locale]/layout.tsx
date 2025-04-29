@@ -3,16 +3,13 @@ import "../globals.css";
 import { golosText } from "@/shared/config/fonts";
 import { ThemeProvider } from "@/shared/config/theme-provider";
 import { PRODUCT_INFO } from "@/shared/constants/data";
-import {
-  AbstractIntlMessages,
-  hasLocale,
-  IntlErrorCode,
-  NextIntlClientProvider,
-} from "next-intl";
+import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/shared/config/i18n/routing";
 import { notFound } from "next/navigation";
 import Footer from "@/widgets/footer/ui";
 import Navbar from "@/widgets/navbar/ui";
+import { ReactNode } from "react";
+import { setRequestLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: PRODUCT_INFO.name,
@@ -20,32 +17,28 @@ export const metadata: Metadata = {
   icons: PRODUCT_INFO.favicon,
 };
 
-export default async function RootLayout({
-  children,
-  params,
-  messages,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-  messages: AbstractIntlMessages;
-}>) {
+type Props = {
+  children: ReactNode;
+  params: Promise<{ locale: Locale }>;
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  // Enable static rendering
+  setRequestLocale(locale);
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${golosText.variable} antialiased`}>
-        <NextIntlClientProvider
-          locale={locale}
-          messages={messages}
-          // onError={(err) => {
-          //   if (err.code === IntlErrorCode.MISSING_MESSAGE) {
-          //     return;
-          //   }
-          // }}
-        >
+        <NextIntlClientProvider locale={locale}>
           <ThemeProvider
             attribute={"class"}
             defaultTheme="light"
