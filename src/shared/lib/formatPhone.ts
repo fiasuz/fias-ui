@@ -1,13 +1,13 @@
 /**
- * Raqamni format qilish (+998 00 111-22-33)
- * @param value Format qilinishi kerak bo'lgan raqam
+ * Format the number (+998 00 111-22-33)
+ * @param value Number to be formatted
  * @returns string +998 00 111-22-33
  */
 const formatPhone = (value: string) => {
-  // Faqat raqamlarni qoldirish
+  // Keep only numbers
   const digits = value.replace(/\D/g, "");
 
-  // Ma'lumotlar bo'lmasa bo'sh string qaytarish
+  // Return empty string if data is not available
   if (digits.length === 0) {
     return "";
   }

@@ -1,69 +1,89 @@
 import dayjs from "dayjs";
 import "dayjs/locale/uz-latn";
-import "dayjs/locale/en";
+import "dayjs/locale/uz";
 import "dayjs/locale/ru";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { getLocale } from "next-intl/server";
 
-// Dayjs pluginlarini o'rnatish
+// Install Dayjs plugins
 dayjs.extend(localizedFormat);
 dayjs.extend(relativeTime);
 
-// Lokalizatsiyani olish uchun funksiya
+// Find locale
 const getCurrentLocale = async () => {
-  try {
-    return await getLocale();
-  } catch (error) {
-    // next-intl konfiguratsiya tashqarisida ishlayotganda xatolikni oldini olish
-    return "uz-latn"; // Standart til
+  const locale = await getLocale();
+  switch (locale) {
+    case "ki":
+      return "uz";
+    case "uz":
+      return "uz-latn";
+    case "ru":
+      return "ru";
+
+    default:
+      return "uz-latn";
   }
 };
 
 const formatDate = {
   /**
-   * Sanani belgilangan formatda ko'rsatish
-   * @param time Sana obyekti yoki string yoki number
-   * @param format Format turi
-   * @param locale Til (ixtiyoriy)
-   * @returns Formatlangan sana stringi
+   * Show date in specified format
+   * @param time Date object or string or number
+   * @param format type
+   * @param locale Language (optional)
+   * @returns string
    */
-  to: async (time: Date | string | number, format: string, locale?: string): Promise<string> => {
-    const currentLocale = locale || await getCurrentLocale();
+  to: async (
+    time: Date | string | number,
+    format: string,
+    locale?: string
+  ): Promise<string> => {
+    const currentLocale = locale || (await getCurrentLocale());
     return dayjs(time).locale(currentLocale).format(format);
   },
 
   /**
-   * Sanani belgilangan formatda sinxron ko'rsatish (client-side uchun)
-   * @param time Sana obyekti yoki string yoki number
-   * @param format Format turi
-   * @param locale Til (ixtiyoriy, standart o'zbek tili)
-   * @returns Formatlangan sana stringi
+   * Sync date in specified format (for client-side)
+   * @param time Date object or string or number
+   * @param format type
+   * @param locale Language (optional, standard Uzbek)
+   * @returns string
    */
-  format: (time: Date | string | number, format: string, locale: string = "uz"): string => {
+  format: (
+    time: Date | string | number,
+    format: string,
+    locale: string = "uz"
+  ): string => {
     return dayjs(time).locale(locale).format(format);
   },
 
   /**
-   * Sanani nisbiy vaqt formatida ko'rsatish (bugun, kecha, 2 kun oldin, ...)
-   * @param time Sana obyekti yoki string yoki number
-   * @param locale Til (ixtiyoriy, standart o'zbek tili)
-   * @returns Nisbiy vaqt stringi
+   * Show date in relative time format (today, yesterday, 2 days ago,...)
+   * @param time Date object or string or number
+   * @param locale Language (optional, standard Uzbek)
+   * @returns string
    */
-  relative: async (time: Date | string | number, locale?: string): Promise<string> => {
-    const currentLocale = locale || await getCurrentLocale();
+  relative: async (
+    time: Date | string | number,
+    locale?: string
+  ): Promise<string> => {
+    const currentLocale = locale || (await getCurrentLocale());
     return dayjs(time).locale(currentLocale).fromNow();
   },
-  
+
   /**
-   * Nisbiy vaqtni sinxron ravishda ko'rsatish (client-side uchun)
-   * @param time Sana obyekti yoki string yoki number
-   * @param locale Til (ixtiyoriy, standart o'zbek tili)
-   * @returns Nisbiy vaqt stringi
+   * Show relative time synchronously (for client-side)
+   * @param time Date object or string or number
+   * @param locale Language (optional, standard Uzbek)
+   * @returns string
    */
-  relativeFormat: (time: Date | string | number, locale: string = "uz"): string => {
+  relativeFormat: (
+    time: Date | string | number,
+    locale: string = "uz"
+  ): string => {
     return dayjs(time).locale(locale).fromNow();
-  }
+  },
 };
 
 export default formatDate;
