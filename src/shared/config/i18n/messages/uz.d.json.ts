@@ -2,9 +2,9 @@
 // See: https://next-intl.dev/docs/workflows/typescript#messages-arguments
 
 declare const messages: {
-  "HomePage": {
-    "title": "Salom dunyo!",
-    "about": "Go to the about page"
-  }
+  HomePage: {
+    title: 'Salom dunyo!';
+    about: 'Go to the about page';
+  };
 };
 export default messages;

@@ -1,4 +1,4 @@
-import { MenuItem } from "../lib/model";
+import { MenuItem } from '../lib/model';
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (

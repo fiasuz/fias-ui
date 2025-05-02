@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -123,6 +123,6 @@
 
 @layer components {
   .custom-container {
-    @apply container px-4 mx-auto
+    @apply container px-4 mx-auto;
   }
 }

@@ -2,9 +2,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/shared/ui/accordion";
-import { MenuItem } from "../lib/model";
-import SubMenuLink from "./SubMenuLink";
+} from '@/shared/ui/accordion';
+import { MenuItem } from '../lib/model';
+import SubMenuLink from './SubMenuLink';
 
 const RenderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {

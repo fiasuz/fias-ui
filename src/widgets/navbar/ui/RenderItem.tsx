@@ -3,14 +3,13 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuTrigger,
-} from "@/shared/ui/navigation-menu";
-import { MenuItem } from "../lib/model";
-import SubMenuLink from "./SubMenuLink";
-import { useTranslations } from "next-intl";
+} from '@/shared/ui/navigation-menu';
+import { MenuItem } from '../lib/model';
+import SubMenuLink from './SubMenuLink';
 
 const RenderMenuItem = (item: MenuItem) => {
   // const t = useTranslations("")
-  
+
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>

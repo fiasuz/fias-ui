@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 /**
  * Hook for closing some items when they are unnecessary to the user
@@ -10,7 +10,7 @@ import React, { useEffect } from "react";
 const useCloser = (
   ref: React.RefObject<HTMLElement>,
   closeFunction: () => void,
-  scrollClose: boolean = true
+  scrollClose: boolean = true,
 ) => {
   useEffect(() => {
     // call function when click outside is ref element
@@ -22,14 +22,16 @@ const useCloser = (
 
     // call function when page is scrolling
     function handleScroll() {
-      scrollClose && closeFunction();
+      if (scrollClose) {
+        closeFunction();
+      }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('scroll', handleScroll);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, [ref, closeFunction]);
 };
