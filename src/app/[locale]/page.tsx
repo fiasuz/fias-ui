@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <h1>{formatDate.relative(Date.now())}</h1>
-      <h1>{getLocale()}</h1>
+      <h1>{getLocale()}</h1>;
       <Welcome />
     </>
   );
