@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-import "../globals.css";
-import { golosText } from "@/shared/config/fonts";
-import { ThemeProvider } from "@/shared/config/theme-provider";
-import { PRODUCT_INFO } from "@/shared/constants/data";
-import { hasLocale, Locale, NextIntlClientProvider } from "next-intl";
-import { routing } from "@/shared/config/i18n/routing";
-import { notFound } from "next/navigation";
-import Footer from "@/widgets/footer/ui";
-import Navbar from "@/widgets/navbar/ui";
-import { ReactNode } from "react";
-import { setRequestLocale } from "next-intl/server";
+import type { Metadata } from 'next';
+import '../globals.css';
+import { golosText } from '@/shared/config/fonts';
+import { ThemeProvider } from '@/shared/config/theme-provider';
+import { PRODUCT_INFO } from '@/shared/constants/data';
+import { hasLocale, Locale, NextIntlClientProvider } from 'next-intl';
+import { routing } from '@/shared/config/i18n/routing';
+import { notFound } from 'next/navigation';
+import Footer from '@/widgets/footer/ui';
+import Navbar from '@/widgets/navbar/ui';
+import { ReactNode } from 'react';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: PRODUCT_INFO.name,
@@ -40,7 +40,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body className={`${golosText.variable} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider
-            attribute={"class"}
+            attribute={'class'}
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange

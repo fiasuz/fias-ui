@@ -1,93 +1,93 @@
-import { Book, Sunset, Trees, Zap } from "lucide-react";
-import { MenuItem } from "./model";
-import { LanguageRoutes } from "@/shared/config/i18n/types";
+import { Book, Sunset, Trees, Zap } from 'lucide-react';
+import { MenuItem } from './model';
+import { LanguageRoutes } from '@/shared/config/i18n/types';
 
 const menu: MenuItem[] = [
-  { title: "Home", url: "#" },
+  { title: 'Home', url: '#' },
   {
-    title: "Products",
-    url: "#",
+    title: 'Products',
+    url: '#',
     items: [
       {
-        title: "Blog",
-        description: "The latest industry news, updates, and info",
+        title: 'Blog',
+        description: 'The latest industry news, updates, and info',
         icon: Book,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Company",
-        description: "Our mission is to innovate and empower the world",
+        title: 'Company',
+        description: 'Our mission is to innovate and empower the world',
         icon: Trees,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Careers",
-        description: "Browse job listing and discover our workspace",
+        title: 'Careers',
+        description: 'Browse job listing and discover our workspace',
         icon: Sunset,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Support",
+        title: 'Support',
         description:
-          "Get in touch with our support team or visit our community forums",
+          'Get in touch with our support team or visit our community forums',
         icon: Zap,
-        url: "#",
+        url: '#',
       },
     ],
   },
   {
-    title: "Resources",
-    url: "#",
+    title: 'Resources',
+    url: '#',
     items: [
       {
-        title: "Help Center",
-        description: "Get all the answers you need right here",
+        title: 'Help Center',
+        description: 'Get all the answers you need right here',
         icon: Zap,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Contact Us",
-        description: "We are here to help you with any questions you have",
+        title: 'Contact Us',
+        description: 'We are here to help you with any questions you have',
         icon: Sunset,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Status",
-        description: "Check the current status of our services and APIs",
+        title: 'Status',
+        description: 'Check the current status of our services and APIs',
         icon: Trees,
-        url: "#",
+        url: '#',
       },
       {
-        title: "Terms of Service",
-        description: "Our terms and conditions for using our services",
+        title: 'Terms of Service',
+        description: 'Our terms and conditions for using our services',
         icon: Book,
-        url: "#",
+        url: '#',
       },
     ],
   },
   {
-    title: "Pricing",
-    url: "#",
+    title: 'Pricing',
+    url: '#',
   },
   {
-    title: "Blog",
-    url: "#",
+    title: 'Blog',
+    url: '#',
   },
-]
+];
 
-const languages: { name: string, key: LanguageRoutes }[] = [
+const languages: { name: string; key: LanguageRoutes }[] = [
   {
     name: "O'zbekcha",
-    key: LanguageRoutes.UZ
+    key: LanguageRoutes.UZ,
   },
   {
-    name: "Ўзбекча",
-    key: LanguageRoutes.KI
+    name: 'Ўзбекча',
+    key: LanguageRoutes.KI,
   },
   {
-    name: "Русский",
-    key: LanguageRoutes.RU
+    name: 'Русский',
+    key: LanguageRoutes.RU,
   },
-]
+];
 
-export {menu, languages}
+export { menu, languages };

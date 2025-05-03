@@ -1,23 +1,22 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { GlobeIcon } from "lucide-react";
+import * as React from 'react';
+import { GlobeIcon } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/shared/ui/dropdown-menu";
-import { Button } from "@/shared/ui/button";
-import { languages } from "../lib/data";
-import { useParams, usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { LanguageRoutes } from "@/shared/config/i18n/types";
+} from '@/shared/ui/dropdown-menu';
+import { Button } from '@/shared/ui/button';
+import { languages } from '../lib/data';
+import { useParams, usePathname, useRouter } from 'next/navigation';
+import { LanguageRoutes } from '@/shared/config/i18n/types';
 
 export function ChangeLang() {
   const { locale } = useParams();
-  const pathname = usePathname()
-  const router = useRouter()
+  const pathname = usePathname();
+  const router = useRouter();
 
   const changeLocale = (locale: LanguageRoutes) => {
     const segments = pathname.split('/');

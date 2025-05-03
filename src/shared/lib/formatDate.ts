@@ -1,10 +1,10 @@
-import dayjs from "dayjs";
-import "dayjs/locale/uz-latn";
-import "dayjs/locale/uz";
-import "dayjs/locale/ru";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-import relativeTime from "dayjs/plugin/relativeTime";
-import { getLocale } from "next-intl/server";
+import dayjs from 'dayjs';
+import 'dayjs/locale/uz-latn';
+import 'dayjs/locale/uz';
+import 'dayjs/locale/ru';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import { getLocale } from 'next-intl/server';
 
 // Install Dayjs plugins
 dayjs.extend(localizedFormat);
@@ -14,15 +14,15 @@ dayjs.extend(relativeTime);
 const getCurrentLocale = async () => {
   const locale = await getLocale();
   switch (locale) {
-    case "ki":
-      return "uz";
-    case "uz":
-      return "uz-latn";
-    case "ru":
-      return "ru";
+    case 'ki':
+      return 'uz';
+    case 'uz':
+      return 'uz-latn';
+    case 'ru':
+      return 'ru';
 
     default:
-      return "uz-latn";
+      return 'uz-latn';
   }
 };
 
@@ -37,7 +37,7 @@ const formatDate = {
   to: async (
     time: Date | string | number,
     format: string,
-    locale?: string
+    locale?: string,
   ): Promise<string> => {
     const currentLocale = locale || (await getCurrentLocale());
     return dayjs(time).locale(currentLocale).format(format);
@@ -53,7 +53,7 @@ const formatDate = {
   format: (
     time: Date | string | number,
     format: string,
-    locale: string = "uz"
+    locale: string = 'uz',
   ): string => {
     return dayjs(time).locale(locale).format(format);
   },
@@ -66,7 +66,7 @@ const formatDate = {
    */
   relative: async (
     time: Date | string | number,
-    locale?: string
+    locale?: string,
   ): Promise<string> => {
     const currentLocale = locale || (await getCurrentLocale());
     return dayjs(time).locale(currentLocale).fromNow();
@@ -80,7 +80,7 @@ const formatDate = {
    */
   relativeFormat: (
     time: Date | string | number,
-    locale: string = "uz"
+    locale: string = 'uz',
   ): string => {
     return dayjs(time).locale(locale).fromNow();
   },
