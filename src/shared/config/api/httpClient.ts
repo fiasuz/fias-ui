@@ -4,7 +4,8 @@ import { getLocale } from 'next-intl/server';
 import { LanguageRoutes } from '../i18n/types';
 
 const httpClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL:
+    process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com',
   timeout: 10000,
 });
 
@@ -16,8 +17,7 @@ httpClient.interceptors.request.use(
     let language = LanguageRoutes.UZ;
     try {
       language = (await getLocale()) as LanguageRoutes;
-    } catch (e) {
-      console.log('error', e);
+    } catch (_) {
       language = getLocaleCS() || LanguageRoutes.UZ;
     }
 
