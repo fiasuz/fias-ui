@@ -2,9 +2,10 @@ import getLocaleCS from '@/shared/lib/getLocaleCS';
 import axios from 'axios';
 import { getLocale } from 'next-intl/server';
 import { LanguageRoutes } from '../i18n/types';
+import { BASE_URL } from './URLs';
 
 const httpClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
+  baseURL: BASE_URL,
   timeout: 10000,
 });
 
