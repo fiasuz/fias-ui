@@ -1,12 +1,12 @@
-import formatDate from '@/shared/lib/formatDate';
+import { getPosts } from '@/shared/config/api/testApi';
 import Welcome from '@/widgets/welcome';
-import { getLocale } from 'next-intl/server';
 
-export default function Home() {
+export default async function Home() {
+  const res = await getPosts({ _limit: 1 });
+  console.log('SSR res', res.data);
+
   return (
     <div>
-      <h1>{formatDate.relative(Date.now())}</h1>
-      <h1>{getLocale()}</h1>
       <Welcome />
     </div>
   );

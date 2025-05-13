@@ -10,6 +10,8 @@ import Footer from '@/widgets/footer/ui';
 import Navbar from '@/widgets/navbar/ui';
 import { ReactNode } from 'react';
 import { setRequestLocale } from 'next-intl/server';
+import QueryProvider from '@/shared/config/react-query/QueryProvider';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: PRODUCT_INFO.name,
@@ -45,12 +47,20 @@ export default async function RootLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
-            {children}
-            <Footer />
+            <QueryProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
+      <Script
+        src="https://buttons.github.io/buttons.js"
+        strategy="lazyOnload"
+        async
+        defer
+      />
     </html>
   );
 }
