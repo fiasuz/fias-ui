@@ -17,6 +17,7 @@ import { PRODUCT_INFO } from '@/shared/constants/data';
 import RenderMenuItem from './RenderItem';
 import RenderMobileMenuItem from './RenderMobileMenuItem';
 import { ChangeLang } from './ChangeLang';
+import Link from 'next/link';
 
 const Navbar = () => {
   const auth = {
@@ -31,7 +32,7 @@ const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <a href={'/'} className="flex items-center gap-2">
+            <Link href={'/'} className="flex items-center gap-2">
               <img
                 src={PRODUCT_INFO.logo}
                 className="max-h-8"
@@ -40,7 +41,7 @@ const Navbar = () => {
               <span className="text-lg font-semibold tracking-tighter">
                 {PRODUCT_INFO.name}
               </span>
-            </a>
+            </Link>
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
@@ -52,10 +53,10 @@ const Navbar = () => {
           <div className="flex gap-2">
             <ChangeLang />
             <Button asChild variant="outline">
-              <a href={auth.login.url}>{auth.login.title}</a>
+              <Link href={auth.login.url}>{auth.login.title}</Link>
             </Button>
             <Button asChild>
-              <a href={auth.signup.url}>{auth.signup.title}</a>
+              <Link href={auth.signup.url}>{auth.signup.title}</Link>
             </Button>
           </div>
         </nav>
@@ -64,13 +65,13 @@ const Navbar = () => {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href={PRODUCT_INFO.logo} className="flex items-center gap-2">
+            <Link href={'/'} className="flex items-center gap-2">
               <img
                 src={PRODUCT_INFO.logo}
                 className="max-h-8"
                 alt={PRODUCT_INFO.name}
               />
-            </a>
+            </Link>
             <Sheet>
               <div className="space-x-2">
                 <ChangeLang />
@@ -83,16 +84,13 @@ const Navbar = () => {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <a
-                      href={PRODUCT_INFO.logo}
-                      className="flex items-center gap-2"
-                    >
+                    <Link href={'/'} className="flex items-center gap-2">
                       <img
                         src={PRODUCT_INFO.logo}
                         className="max-h-8"
                         alt={PRODUCT_INFO.name}
                       />
-                    </a>
+                    </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 p-4">
@@ -106,10 +104,10 @@ const Navbar = () => {
 
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
+                      <Link href={auth.login.url}>{auth.login.title}</Link>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
+                      <Link href={auth.signup.url}>{auth.signup.title}</Link>
                     </Button>
                   </div>
                 </div>
