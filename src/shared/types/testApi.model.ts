@@ -1,4 +1,4 @@
-export interface TestApiType {
+export interface TestApiModel {
   userId: number;
   id: number;
   title: string;

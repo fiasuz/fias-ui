@@ -1,11 +1,15 @@
-import "./App.css";
+import MainProvider from "@/providers/main"
+import { Button } from "@/shared/ui/button"
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  );
+    <div>
+      <MainProvider>
+        <Button>sdsdsd</Button>
+        <h1>Wrapper</h1>
+      </MainProvider>
+    </div>
+  )
 }
 
-export default App;
+export default App

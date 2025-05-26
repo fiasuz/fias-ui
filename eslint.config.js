@@ -23,6 +23,18 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'max-len': [
+        'error',
+        {
+          code: 200,
+          ignoreUrls: true,
+          ignoreComments: true,
+          ignoreStrings: true,
+        },
+      ],
+      'no-console': ['warn', { allow: ['error'] }],
+      eqeqeq: 'warn',
+      'no-duplicate-imports': 'error',
     },
   },
 )
