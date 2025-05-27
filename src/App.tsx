@@ -1,15 +1,13 @@
-import MainProvider from "@/providers/main"
-import { Button } from "@/shared/ui/button"
+import MainProvider from '@/providers/main';
+import '@/shared/config/i18n';
+import Welcome from '@/widgets/welcome/ui/welcome';
 
 const App = () => {
   return (
-    <div>
-      <MainProvider>
-        <Button>sdsdsd</Button>
-        <h1>Wrapper</h1>
-      </MainProvider>
-    </div>
-  )
-}
+    <MainProvider>
+      <Welcome />
+    </MainProvider>
+  );
+};
 
-export default App
+export default App;
