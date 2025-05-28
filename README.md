@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# create-fias
 
-## Getting Started
+[![npm version](https://img.shields.io/npm/v/create-fias?color=%2300b894&style=flat-square)](https://www.npmjs.com/package/create-fias)
+[![npm downloads](https://img.shields.io/npm/dt/create-fias?style=flat-square)](https://www.npmjs.com/package/create-fias)
+[![license](https://img.shields.io/npm/l/create-fias?style=flat-square)](https://github.com/fiasuz/fias-ui/blob/main/LICENSE)
+[![docs](https://img.shields.io/badge/docs-available-brightgreen?style=flat-square)](https://fias.gitbook.io/docs)
 
-First, run the development server:
+🚀 create-fias is a modern project starter for React and Next.js. It comes with TypeScript, Tailwind CSS, Shadcn UI, FSD architecture, ESLint, Prettier, husky, and more — all pre-configured to help you build faster and cleaner apps.
+
+---
+
+## 📦 Installation
+
+To create a new project, simply run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npx create-fias
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You will be prompted to select a project name and template (react or next).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features
 
-## Learn More
+* ✅ React or Next.js (App Router) templates
+* 🧱 Feature-Sliced Design (FSD) architecture
+* ⚙️ TypeScript support
+* 🎨 Tailwind CSS + Shadcn UI
+* 🌍 Internationalization (i18n)
+* 🌗 Dark/Light theme support
+* 🔄 Data fetching with TanStack Query (React Query)
+* 🧰 Useful hooks: useMobile, useWindowSize, useCloser
+* 🧪 Utility functions: formatDate, formatPhone, formatPrice
+* 🧹 Pre-configured ESLint + Prettier + lint-staged
+* 🛡️ Git hooks via husky (pre-commit & pre-push checks)
+* 🚀 Next.js + Turbopack for lightning-fast builds
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For detailed usage instructions and configuration guide, please visit the official documentation:
 
-## Deploy on Vercel
+👉 [https://fias.gitbook.io/docs](https://fias.gitbook.io/docs)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗂️ Repository
+
+Browse the source code or contribute on GitHub:
+
+🔗 [https://github.com/fiasuz/fias-ui](https://github.com/fiasuz/fias-ui)
+
+---
+
+## 🤝 Contributing
+
+We welcome all contributions! If you'd like to report a bug, suggest a feature, or submit a pull request, please follow our contribution guide:
+
+📄 [https://fias.gitbook.io/docs/other/contributing-introduction](https://fias.gitbook.io/docs/other/contributing-introduction)
