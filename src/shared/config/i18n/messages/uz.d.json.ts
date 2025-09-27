@@ -3,8 +3,8 @@
 
 declare const messages: {
   HomePage: {
-    title: 'Salom dunyo!';
-    about: 'Go to the about page';
+    title: "Salom dunyo!";
+    about: "Go to the about page";
   };
 };
 export default messages;
