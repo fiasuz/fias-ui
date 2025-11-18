@@ -1,0 +1,17 @@
+{
+  "componentName": "HeroBanner",
+  "props": {
+    "title": "Build Websites Faster with FIAS",
+    "subtitle": "Powerful UI blocks for developers",
+    "description": "Create pages visually, export clean React code instantly, and speed up your workflow.",
+    "primaryButton": {
+      "text": "Get Started",
+      "link": "/start"
+    },
+    "secondaryButton": {
+      "text": "Learn More",
+      "link": "/docs"
+    },
+    "backgroundImage": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+  }
+}

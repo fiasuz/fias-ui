@@ -1,0 +1,34 @@
+{
+  "componentName": "string",
+  "props": {
+    "title": "string",
+    "subtitle": {
+      "type": "string",
+      "optional": true
+    },
+    "description": {
+      "type": "string",
+      "optional": true
+    },
+    "primaryButton": {
+      "type": "object",
+      "optional": true,
+      "schema": {
+        "text": "string",
+        "link": "string"
+      }
+    },
+    "secondaryButton": {
+      "type": "object",
+      "optional": true,
+      "schema": {
+        "text": "string",
+        "link": "string"
+      }
+    },
+    "backgroundImage": {
+      "type": "string",
+      "optional": true
+    }
+  }
+}

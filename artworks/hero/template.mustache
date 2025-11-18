@@ -1,0 +1,66 @@
+'use client'
+
+import React from 'react';
+
+const {{componentName}}: React.FC = () => {
+  return (
+    <section className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20 md:py-32">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Title */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            {{props.title}}
+          </h1>
+          
+          {/* Subtitle */}
+          {{#props.subtitle}}
+          <p className="text-xl md:text-2xl mb-8 text-gray-100">
+            {{props.subtitle}}
+          </p>
+          {{/props.subtitle}}
+          
+          {/* Description */}
+          {{#props.description}}
+          <p className="text-lg mb-10 text-gray-200 max-w-2xl mx-auto">
+            {{props.description}}
+          </p>
+          {{/props.description}}
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {{#props.primaryButton}}
+            <a
+              href="{{props.primaryButton.link}}"
+              className="inline-block bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+            >
+              {{props.primaryButton.text}}
+            </a>
+            {{/props.primaryButton}}
+            
+            {{#props.secondaryButton}}
+            <a
+              href="{{props.secondaryButton.link}}"
+              className="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-300"
+            >
+              {{props.secondaryButton.text}}
+            </a>
+            {{/props.secondaryButton}}
+          </div>
+        </div>
+        
+        {/* Optional Background Image */}
+        {{#props.backgroundImage}}
+        <div className="absolute inset-0 z-[-1] opacity-20">
+          <img
+            src="{{props.backgroundImage}}"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        {{/props.backgroundImage}}
+      </div>
+    </section>
+  );
+};
+
+export default {{componentName}};
