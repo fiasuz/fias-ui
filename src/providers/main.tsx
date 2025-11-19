@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react';
-import QueryProvider from './react-query/QueryProvider';
-import { ThemeProvider } from '@/providers/theme/ThemeProvider';
+import type { ReactNode } from "react";
+import QueryProvider from "./react-query/QueryProvider";
+import { ThemeProvider } from "@/providers/theme/ThemeProvider";
+import { BrowserRouter } from "react-router-dom";
 
 interface Props {
   children: ReactNode;
@@ -8,9 +9,11 @@ interface Props {
 
 const MainProvider = ({ children }: Props) => {
   return (
-    <QueryProvider>
-      <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
-    </QueryProvider>
+    <BrowserRouter>
+      <QueryProvider>
+        <ThemeProvider defaultTheme="light">{children}</ThemeProvider>
+      </QueryProvider>
+    </BrowserRouter>
   );
 };
 
