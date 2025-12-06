@@ -1,0 +1,21 @@
+{
+  "componentName": "string",
+  "props": {
+    "title": "string",
+    "description": "string",
+    "features": {
+      "type": "array",
+      "items": {
+        "term": "string",
+        "description": "string"
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "url": "string",
+        "alt": "string"
+      }
+    }
+  }
+}
