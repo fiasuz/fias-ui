@@ -1,7 +1,7 @@
-import { PRODUCT_INFO } from '@/shared/constants/data';
-import { InstagramIcon, YoutubeIcon } from 'lucide-react';
-import { sections } from '../lib/data';
-import { ModeToggle } from '@/shared/ui/theme-toggle';
+import { PRODUCT_INFO } from "@/shared/constants/data";
+import { InstagramIcon, YoutubeIcon } from "lucide-react";
+import { sections } from "../lib/data";
+import { ModeToggle } from "@/shared/ui/theme-toggle";
 
 const Footer = () => {
   return (

@@ -3,9 +3,9 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuTrigger,
-} from '@/shared/ui/navigation-menu';
-import { MenuItem } from '../lib/model';
-import SubMenuLink from './SubMenuLink';
+} from "@/shared/ui/navigation-menu";
+import { type MenuItem } from "../lib/model";
+import SubMenuLink from "./SubMenuLink";
 
 const RenderMenuItem = (item: MenuItem) => {
   // const t = useTranslations("")

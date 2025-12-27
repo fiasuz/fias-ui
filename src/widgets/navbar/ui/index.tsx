@@ -1,28 +1,28 @@
-import { Accordion } from '@/shared/ui/accordion';
-import { Button } from '@/shared/ui/button';
+import { Accordion } from "@/shared/ui/accordion";
+import { Button } from "@/shared/ui/button";
 import {
   NavigationMenu,
   NavigationMenuList,
-} from '@/shared/ui/navigation-menu';
+} from "@/shared/ui/navigation-menu";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/shared/ui/sheet';
-import { Menu } from 'lucide-react';
-import { menu } from '../lib/data';
-import { PRODUCT_INFO } from '@/shared/constants/data';
-import RenderMenuItem from './RenderItem';
-import RenderMobileMenuItem from './RenderMobileMenuItem';
-import { ChangeLang } from './ChangeLang';
-import Link from 'next/link';
+} from "@/shared/ui/sheet";
+import { Menu } from "lucide-react";
+import { menu } from "../lib/data";
+import { PRODUCT_INFO } from "@/shared/constants/data";
+import RenderMenuItem from "./RenderItem";
+import RenderMobileMenuItem from "./RenderMobileMenuItem";
+import { ChangeLang } from "./ChangeLang";
+import Link from "next/link";
 
 const Navbar = () => {
   const auth = {
-    login: { title: 'Login', url: '#' },
-    signup: { title: 'Sign up', url: '#' },
+    login: { title: "Login", url: "#" },
+    signup: { title: "Sign up", url: "#" },
   };
 
   return (
@@ -32,7 +32,7 @@ const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <Link href={'/'} className="flex items-center gap-2">
+            <Link href={"/"} className="flex items-center gap-2">
               <img
                 src={PRODUCT_INFO.logo}
                 className="max-h-8"
@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href={'/'} className="flex items-center gap-2">
+            <Link href={"/"} className="flex items-center gap-2">
               <img
                 src={PRODUCT_INFO.logo}
                 className="max-h-8"
@@ -84,7 +84,7 @@ const Navbar = () => {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <Link href={'/'} className="flex items-center gap-2">
+                    <Link href={"/"} className="flex items-center gap-2">
                       <img
                         src={PRODUCT_INFO.logo}
                         className="max-h-8"

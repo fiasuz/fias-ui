@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 /**
  * Hook for closing some items when they are unnecessary to the user
@@ -27,11 +27,11 @@ const useCloser = (
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('scroll', handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, [ref, closeFunction]);
 };
